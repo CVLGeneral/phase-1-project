@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	background-color: #111111;
+
+}
+header {
+	background-color: #22252a;
+	color: #fff;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+}
+
+header h1 {
+	margin-right: auto;
+}
+
+header form {
+	display: flex;
+	align-items: center;
+}
+
+header input[type="text"],
+header select {
+	margin-right: 10px;
+	padding: 5px;
+	border: none;
+	border-radius: 3px;
+}
+
+header select {
+	min-width: 100px;
+}
+
+header button[type="submit"] {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 3px;
+	background-color: #fff;
+	color: #222;
+	cursor: pointer;
+}
