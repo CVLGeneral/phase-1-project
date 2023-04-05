@@ -41,36 +41,52 @@ function displayMovies(movies) {
       title.textContent = movie.Title;
       const yearEl = document.createElement('p');
       yearEl.textContent = `Year: ${movie.Year}`;
-  
-        // Create badge for movie type (movie/series)
-        const typeBadge = document.createElement('div');
-        typeBadge.classList.add('type-badge');
-        typeBadge.textContent = movie.Type.toUpperCase();
-      
-  
-       // Create heart icon
-       const heart = document.createElement('i');
-       heart.classList.add('fa', 'fa-heart-o');
-       heart.dataset.movieId = movie.imdbID;
-   
-       // Add event listener to toggle heart on click
-       heart.addEventListener('click', (event) => {
-         event.preventDefault();
-         const targetHeart = event.target;
-         targetHeart.classList.toggle('fa-heart-o');
-         targetHeart.classList.toggle('fa-heart');
-         targetHeart.classList.toggle('red');
-       });
-  
-      div.appendChild(img);
-      div.appendChild(title);
-      div.appendChild(yearEl);
-      div.appendChild(heart);
-      div.appendChild(typeBadge);
-  
-      
-      moviesGrid.appendChild(div);
-  
+
+    // Create badge for movie type (movie/series)
+    const typeBadge = document.createElement('div');
+    typeBadge.classList.add('type-badge');
+    typeBadge.textContent = movie.Type.toUpperCase();
+    
+
+    // Create heart icon and make it persist
+    const heart = document.createElement('i');
+    heart.classList.add('fa', 'fa-heart-o');
+    heart.dataset.movieId = movie.imdbID;
+
+    // Check if movie is already in favorites
+    if (localStorage.getItem(movie.imdbID)) {
+    heart.classList.remove('fa-heart-o');
+    heart.classList.add('fa-heart', 'red');
+    }
+
+    // Add event listener to toggle heart on click
+    heart.addEventListener('click', (event) => {
+    event.preventDefault();
+    const targetHeart = event.target;
+    const movieId = targetHeart.dataset.movieId;
+    const isFavorite = targetHeart.classList.contains('fa-heart');
+
+    if (isFavorite) {
+        targetHeart.classList.remove('fa-heart', 'red');
+        targetHeart.classList.add('fa-heart-o');
+        localStorage.removeItem(movieId);
+    } else {
+        targetHeart.classList.remove('fa-heart-o');
+        targetHeart.classList.add('fa-heart', 'red');
+        localStorage.setItem(movieId, 'true');
+    }
+    });
+
+
+    div.appendChild(img);
+    div.appendChild(title);
+    div.appendChild(yearEl);
+    div.appendChild(heart);
+    div.appendChild(typeBadge);
+
+
+    moviesGrid.appendChild(div);
+
     });
   
   }

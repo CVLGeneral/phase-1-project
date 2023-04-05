@@ -1,0 +1,11 @@
+{
+  "name": "phase-1-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db": "json-server --watch assets/db/db.json"
+  },
+  "author": "Leonard",
+  "license": "ISC"
+}
