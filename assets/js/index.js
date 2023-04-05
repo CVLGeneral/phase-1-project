@@ -84,3 +84,27 @@ function fetchPopularMovies() {
       .catch(error => console.error(error));
   }
   
+
+const form = document.querySelector('form');
+
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  fetchMovies();
+});
+
+//render movies based on search input
+function fetchMovies() {
+  const searchInput = document.querySelector('input[type="text"]');
+
+
+  const query = searchInput.value;
+
+  let url = `${API_URL}&s=${query}`;
+
+ 
+  fetch(url)
+    .then(response => response.json())
+    .then(data => displayMovies(data.Search || [])) //return movie searched or movies with same keywords
+    .catch(error => console.error(error));
+}
