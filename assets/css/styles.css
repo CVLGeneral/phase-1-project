@@ -135,3 +135,20 @@ header button[type="submit"] {
 .movie-details p {
 	margin-bottom: 5px;
 }
+
+ /* Heart icon styles */
+ .fa-heart-o, .fa-heart {
+	font-size: 1.5rem;
+	color: #555;
+	cursor: pointer;
+	margin-left: 20px;
+
+  }
+  
+  .fa-heart-o:hover, .fa-heart:hover {
+	color: #f44336;
+  }
+  
+  .fa-heart.red {
+	color: #f44336;
+  }
