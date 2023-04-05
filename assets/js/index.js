@@ -95,20 +95,19 @@ form.addEventListener('submit', (event) => {
 
 //render movies based on search input
 function fetchMovies() {
-  const searchInput = document.querySelector('input[type="text"]');
-
-
-  const query = searchInput.value;
-
-  let url = `${API_URL}&s=${query}`;
-
- 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => displayMovies(data.Search || [])) //return movie searched or movies with same keywords
-    .catch(error => console.error(error));
-}
-
+    const searchInput = document.querySelector('input[type="text"]');
+  
+  
+    const query = searchInput.value;
+  
+    let url = `${API_URL}&s=${query}`;
+  
+   
+    fetch(url)
+      .then(response => response.json())
+      .then(data => displayMovies(data.Search || []))
+      .catch(error => console.error(error));
+  }
 // Fetch movies by genre
 function fetchMoviesByGenre(genre) {
     //To arrange movies starting with the recent one
@@ -118,5 +117,15 @@ function fetchMoviesByGenre(genre) {
       .then(response => response.json())
       .then(data => displayMovies(data.Search || []))
       .catch(error => console.error(error));
+  }
+  
+  // Setup click handlers for genres
+  function setupGenreClickHandlers() {
+    const genreSelect = document.getElementById('genreSelect');
+  
+    genreSelect.addEventListener('change', (event) => {
+      const genre = event.target.value;
+      fetchMoviesByGenre(genre);
+    });
   }
   
