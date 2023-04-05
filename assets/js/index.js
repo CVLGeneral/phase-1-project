@@ -74,3 +74,13 @@ function displayMovies(movies) {
     });
   
   }
+
+  //To display some movies on page load
+function fetchPopularMovies() {
+    const url = `${API_URL}&s=Avengers`;
+    fetch(url)
+      .then(response => response.json())
+      .then(data => displayMovies(data.Search))
+      .catch(error => console.error(error));
+  }
+  
