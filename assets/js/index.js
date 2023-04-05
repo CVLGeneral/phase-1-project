@@ -11,9 +11,66 @@ const options = {
 
 document.addEventListener("DOMContentLoaded",(event)=>{
   event.preventDefault();
-  fetchPopularMovies();
+  fetchPopularMovies();   // Call fetchPopularMovies to open the movies list on page load
+
   setupGenreClickHandlers();
 
-
-
 })
+
+
+function displayMovies(movies) {
+    const moviesGrid = document.querySelector('.movies-grid');
+  
+  
+    movies.sort((a, b) => parseInt(b.Year) - parseInt(a.Year)); // Sort movies by year by displaying the most recent to the least recent
+  
+  
+    moviesGrid.innerHTML = '';  //clear movie details first 
+  
+    movies.forEach(movie => {
+      const div = document.createElement('div');
+      div.classList.add('movie', 'movie-card'); 
+  
+      
+      const img = document.createElement('img');
+      img.src = movie.Poster !== 'N/A' ? movie.Poster : 'https://via.placeholder.com/148x208.png?text=No+Poster';
+      img.alt = `${movie.Title} poster`;
+      img.width = '148';
+      img.height = '208';
+      const title = document.createElement('h3');
+      title.textContent = movie.Title;
+      const yearEl = document.createElement('p');
+      yearEl.textContent = `Year: ${movie.Year}`;
+  
+        // Create badge for movie type (movie/series)
+        const typeBadge = document.createElement('div');
+        typeBadge.classList.add('type-badge');
+        typeBadge.textContent = movie.Type.toUpperCase();
+      
+  
+       // Create heart icon
+       const heart = document.createElement('i');
+       heart.classList.add('fa', 'fa-heart-o');
+       heart.dataset.movieId = movie.imdbID;
+   
+       // Add event listener to toggle heart on click
+       heart.addEventListener('click', (event) => {
+         event.preventDefault();
+         const targetHeart = event.target;
+         targetHeart.classList.toggle('fa-heart-o');
+         targetHeart.classList.toggle('fa-heart');
+         targetHeart.classList.toggle('red');
+       });
+  
+      div.appendChild(img);
+      div.appendChild(title);
+      div.appendChild(yearEl);
+      div.appendChild(heart);
+      div.appendChild(typeBadge);
+  
+      
+      moviesGrid.appendChild(div);
+  
+    });
+  
+  }
