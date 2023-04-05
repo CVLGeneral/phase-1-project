@@ -152,3 +152,83 @@ header button[type="submit"] {
   .fa-heart.red {
 	color: #f44336;
   }
+
+  footer{
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    background: #22252a;
+    margin-bottom: 0px;
+    margin-top: 3em;
+}
+#footer-logo{
+    font-family: 'Qwigley';
+    font-style: normal;
+    font-weight: 400;
+	font-size: xx-large;
+    line-height: 0px;
+    color: #2596be;
+    text-align: left;
+    margin-left: 20px;
+	margin-top: 30px;
+}
+
+.footer img{
+	width: 200px;
+	height: 200px;
+	margin-top: 50px;
+	border-radius: 50%; /* makes it a circle */
+
+
+
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em 1em 1em 1em;
+}
+#links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 5em;
+}
+.footer h3{
+    font-family: 'Barlow';
+    font-weight: 700;
+    font-size: 20px;
+    color: #FBF6F8;
+    margin: 1em 1em 0em 1em;
+	margin-left: 20px;
+}
+.footer li{
+    list-style: none;
+    font-family: 'Barlow';
+    font-weight: 550;
+    font-size: 15px;
+    color: #FBF6F8;
+    margin: 1em 1em 1em 0em;
+    padding: 0em;
+	margin-left: 20px;
+}
+.footer a{
+    text-decoration: none;
+    color: #FBF6F8;
+}
+.footer a:hover{
+    color: #ff7b29;
+}
+.follow-us li{
+    display: inline-block;
+}
+footer h6{
+    font-family: 'Barlow';
+    font-weight: 550;
+    font-size: 15px;
+    color: #FBF6F8;
+    margin: 1em 1em 0em 1em;
+    text-align: center
+	
+}
