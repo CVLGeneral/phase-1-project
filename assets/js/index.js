@@ -85,7 +85,7 @@ function fetchPopularMovies() {
   }
   
 
-const form = document.querySelector('form');
+  const form = document.querySelector('form');
 
 
 form.addEventListener('submit', (event) => {
@@ -93,39 +93,39 @@ form.addEventListener('submit', (event) => {
   fetchMovies();
 });
 
-//render movies based on search input
 function fetchMovies() {
-    const searchInput = document.querySelector('input[type="text"]');
-  
-  
-    const query = searchInput.value;
-  
-    let url = `${API_URL}&s=${query}`;
-  
-   
-    fetch(url)
-      .then(response => response.json())
-      .then(data => displayMovies(data.Search || []))
-      .catch(error => console.error(error));
-  }
+  const searchInput = document.querySelector('input[type="text"]');
+
+
+  const query = searchInput.value;
+
+  let url = `${API_URL}&s=${query}`;
+
+ 
+  fetch(url)
+    .then(response => response.json())
+    .then(data => displayMovies(data.Search || []))
+    .catch(error => console.error(error));
+}
+
+
 // Fetch movies by genre
 function fetchMoviesByGenre(genre) {
-    //To arrange movies starting with the recent one
-    let url = `${API_URL}&s=${genre}&type=series&y=&y=2023&y=2022&y=2021&y=2020&y=2019&y=2018&y=2017&y=2016&y=2015&y=2014&y=2013&y=2012&y=2011&y=2010`;
-    
-    fetch(url)
-      .then(response => response.json())
-      .then(data => displayMovies(data.Search || []))
-      .catch(error => console.error(error));
-  }
+  //To arrange movies starting with the recent one
+  let url = `${API_URL}&s=${genre}&type=series&y=&y=2023&y=2022&y=2021&y=2020&y=2019&y=2018&y=2017&y=2016&y=2015&y=2014&y=2013&y=2012&y=2011&y=2010`;
   
-  // Setup click handlers for genres
-  function setupGenreClickHandlers() {
-    const genreSelect = document.getElementById('genreSelect');
-  
-    genreSelect.addEventListener('change', (event) => {
-      const genre = event.target.value;
-      fetchMoviesByGenre(genre);
-    });
-  }
-  
+  fetch(url)
+    .then(response => response.json())
+    .then(data => displayMovies(data.Search || []))
+    .catch(error => console.error(error));
+}
+
+// Setup click handlers for genres
+function setupGenreClickHandlers() {
+  const genreSelect = document.getElementById('genreSelect');
+
+  genreSelect.addEventListener('change', (event) => {
+    const genre = event.target.value;
+    fetchMoviesByGenre(genre);
+  });
+}
