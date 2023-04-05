@@ -232,3 +232,16 @@ footer h6{
     text-align: center
 	
 }
+
+.type-badge {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 4px 8px;
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 14px;
+	text-transform: uppercase;
+  }
+  
