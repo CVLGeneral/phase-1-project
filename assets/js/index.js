@@ -133,7 +133,7 @@ function fetchMovies() {
 // Fetch movies by genre
 function fetchMoviesByGenre(genre) {
   //To arrange movies starting with the recent one
-  let url = `${API_URL}&s=${genre}&type=series&y=&y=2023&y=2022&y=2021&y=2020&y=2019&y=2018&y=2017&y=2016&y=2015&y=2014&y=2013&y=2012&y=2011&y=2010`;
+  let url = `${API_URL}&s=${genre}&y=&y=2023&y=2022&y=2021&y=2020&y=2019&y=2018&y=2017&y=2016&y=2015&y=2014&y=2013&y=2012&y=2011&y=2010`;
   
   fetch(url)
     .then(response => response.json())
