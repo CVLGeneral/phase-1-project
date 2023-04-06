@@ -154,7 +154,7 @@ function setupGenreClickHandlers() {
 
 function renderMovies(){
 
-  fetch ("http://localhost:3000/movies",options)
+  fetch ("https://app.netlify.com/movies",options)
   .then(response => response.json()) // Convert response to JSON
         .then(data => {
           const movies = data; // Get movies array from data
@@ -198,7 +198,7 @@ function renderMovies(){
   
     
       // Add movie to server ,this is by using the POST method
-      fetch('http://localhost:3000/movies', {
+      fetch('https://app.netlify.com/movies', {
         method: 'POST', 
         headers: {
           // 'application/json' indicates that the content being sent or received is in JSON (JavaScript Object Notation) format
