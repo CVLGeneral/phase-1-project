@@ -49,7 +49,16 @@
 This movie search application was created by Kiprotich Ngetich Leonard and is maintained by Kiprotich Ngetich Leonard. You can contact me at cvlgeneral2020@gmail.com.
 
 <h2>Contributing</h2>
-<p>Contributions are welcome! Please open an issue or submit a pull request if you have any suggestions, bug reports, or improvements.</p>
+    <p>If you would like to contribute to the project, please follow these steps:</p>
+    <ol>
+    <li>Fork the repository.</li>
+    <li>Create a new branch for your changes using <code>git checkout -b your-branch-name</code>.</li>
+    <li>Make your changes to the code.</li>
+    <li>Test your changes.</li>
+    <li>Commit your changes with a descriptive commit message using <code>git commit -m "your commit message"</code>.</li>
+    <li>Push your changes to your forked repository using <code>git push origin your-branch-name</code>.</li>
+    <li>Submit a pull request to the original repository.</li>
+    </ol>
 
 <h2>License</h2>
 <p>This project is licensed under the <a href="license.md">MIT License</a></p>
