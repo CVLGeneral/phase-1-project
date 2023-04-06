@@ -184,8 +184,37 @@ function renderMovies(){
   }
   
 
-
-
+///upload movies to json server
+  function addMovie(){
+    const addMovieForm = document.querySelector('.add-movie-form form');
+  
+    addMovieForm.addEventListener('submit', event => {
+      event.preventDefault();
+    
+      // Get form data. this is the animal name and image url input by the user
+      const name = addMovieForm.elements.name.value;
+      const image = addMovieForm.elements.image.value;
+      const year = addMovieForm.elements.year.value;
+  
+    
+      // Add movie to server ,this is by using the POST method
+      fetch('http://localhost:3000/movies', {
+        method: 'POST', 
+        headers: {
+          // 'application/json' indicates that the content being sent or received is in JSON (JavaScript Object Notation) format
+          'Content-Type': 'application/json'
+        },
+      
+        body: JSON.stringify({ 
+          //JSON.stringify converts Javascript value to JSON string
+          name,
+          image,
+          year,
+        })
+      })
+    
+    })
+  }
 
 
 
