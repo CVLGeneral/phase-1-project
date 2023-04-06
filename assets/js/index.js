@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded",(event)=>{
   fetchPopularMovies();   // Call fetchPopularMovies to open the movies list on page load
 
   setupGenreClickHandlers();
+  addMovie();
+  renderMovies()
+
 
 })
 
@@ -86,8 +89,10 @@ function displayMovies(movies) {
 
 
     moviesGrid.appendChild(div);
+    
 
     });
+    
   
   }
 
@@ -144,4 +149,84 @@ function setupGenreClickHandlers() {
     const genre = event.target.value;
     fetchMoviesByGenre(genre);
   });
+}
+
+
+function renderMovies(){
+
+  fetch ("http://localhost:3000/movies",options)
+  .then(response => response.json()) // Convert response to JSON
+        .then(data => {
+          const movies = data; // Get movies array from data
+          const moviesContainer = document.getElementById('movies-container'); // Get movies container element
+          
+          // Loop through each movie and create a movie card element
+          movies.forEach(movie => {
+            const movieCard = document.createElement('div');
+            movieCard.classList.add('movies', 'movies-card'); 
+
+            movieCard.innerHTML = `
+              <img src="${movie.image}" alt="${movie.name}">
+              <h3>${movie.name}</h3>
+              <p> Year:${movie.year}</p>
+
+            `;
+
+ 
+
+       
+
+
+
+
+
+        moviesContainer.appendChild(movieCard); // Append movie card to movies container
+          });
+
+
+        })
+        .catch(error => console.error('Error fetching movies:', error));
+  
+  
+  }
+  
+
+
+
+
+
+
+
+
+
+
+function addMovie(){
+  const addMovieForm = document.querySelector('.add-movie-form form');
+
+  addMovieForm.addEventListener('submit', event => {
+    event.preventDefault();
+  
+    // Get form data. this is the animal name and image url input by the user
+    const name = addMovieForm.elements.name.value;
+    const image = addMovieForm.elements.image.value;
+    const year = addMovieForm.elements.year.value;
+
+  
+    // Add movie to server ,this is by using the POST method
+    fetch('http://localhost:3000/movies', {
+      method: 'POST', 
+      headers: {
+        // 'application/json' indicates that the content being sent or received is in JSON (JavaScript Object Notation) format
+        'Content-Type': 'application/json'
+      },
+    
+      body: JSON.stringify({ 
+        //JSON.stringify converts Javascript value to JSON string
+        name,
+        image,
+        year,
+      })
+    })
+  
+  })
 }

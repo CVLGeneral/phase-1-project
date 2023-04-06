@@ -1,0 +1,28 @@
+{
+  "movies": [
+    {
+      "name": "iup",
+      "image": "https://i.goojara.to/mb_228_228643.jpg",
+      "year": "2023",
+      "id": 4
+    },
+    {
+      "name": "dwfe",
+      "image": "https://www.91-cdn.com/hub/wp-content/uploads/2021/07/Disney-movies-to-watch-1200x900.jpeg",
+      "year": "2023",
+      "id": 5
+    },
+    {
+      "name": "Murder Mystery 2",
+      "image": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQUK38zuSYCYBFcjOBlMEIjaxuDmYUmzhbCu9q9t8J_tKTYeHRHrmI6175OwTadx3buYQtBRykFyS0Q-JsX54h-U5gJ013XfIZ15v3Y91r2Pm95EK9xYrLH4ftTZzY3SrWOfP9f5GM8QgXy10N-fqfvOP.jpg?r=a63",
+      "year": "2023",
+      "id": 6
+    },
+    {
+      "name": "Murder Mystery 3",
+      "image": "https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQUK38zuSYCYBFcjOBlMEIjaxuDmYUmzhbCu9q9t8J_tKTYeHRHrmI6175OwTadx3buYQtBRykFyS0Q-JsX54h-U5gJ013XfIZ15v3Y91r2Pm95EK9xYrLH4ftTZzY3SrWOfP9f5GM8QgXy10N-fqfvOP.jpg?r=a63",
+      "year": "2023",
+      "id": 7
+    }
+  ]
+}
