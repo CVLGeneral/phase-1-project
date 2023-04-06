@@ -294,3 +294,95 @@ footer h6{
   }
 
 
+  #movies-container{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	
+  }
+
+
+  .movies {
+
+	margin-bottom: 10px;
+	position: relative;
+	transition: transform 0.2s;
+	transform-origin: center bottom;
+	
+
+  }
+  .movies:hover {
+	transform: scale(1.05);
+	z-index: 1;
+  }
+  
+
+  .movies-card{
+	width: 147.984px;
+	height: 400.53px;
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: #2596be;
+	border-radius: 10px;
+	cursor: pointer;
+ 
+  }
+
+
+
+  .movies img{
+	width: 147.984px;
+	height: 205.53px;
+	background-color: aqua;
+	border-radius: 5px; 
+  }
+  .movies h3:hover{
+	color: #ff7b29;
+
+  }
+
+  .movies h3{
+	margin: 10px 0;
+	box-sizing: border-box;
+	margin-left: 20px;
+  }
+
+  .movies p{
+	margin: 10px 0;
+	box-sizing: border-box;
+	margin-left: 20px;
+  }
+  
+  
+
+
+
+
+.movies-details {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+	
+}
+
+.movies:hover .movie-details {
+	opacity: 1;
+}
+
+.movies-details h3 {
+	margin-bottom: 10px;
+}
+
+.movies-details p {
+	margin-bottom: 5px;
+}
