@@ -12,7 +12,9 @@
 <li>Open Movie Database (OMDb) API</li>
 <li>JSON Server</li>
 </ul>
-
+<h2>Netlify Link</h2>
+  <a href="https://beautiful-bublanina-4efb31.netlify.app/" target="_blank">https://beautiful-bublanina-4efb31.netlify.app/</a>
+</body>
 
 <h2>Requirements</h2>
   <ul>
